@@ -3009,14 +3009,8 @@ ${isQualityGood ? `Анализ в формате:
                                             </div>
                                             
                                             <div className="action-buttons" style={{marginTop: '20px', display: 'flex', gap: '15px', justifyContent: 'center'}}>
-                                                <button className="btn btn-primary" onClick={() => {
-                                                    setSelectedChoice(null);
-                                                    const difficulties = ['easy', 'medium', 'hard'];
-                                                    const currentIndex = difficulties.indexOf(difficulty);
-                                                    const nextDifficulty = difficulties[(currentIndex + 1) % 3];
-                                                    startScenario(nextDifficulty);
-                                                }}>
-                                                    ➡️ Следующая ситуация
+                                                <button className="btn btn-primary" onClick={backToDifficulty}>
+                                                    Выбрать другую ситуацию
                                                 </button>
                                                 <button className="btn btn-secondary" onClick={restart}>
                                                     🏠 Главное меню
@@ -3448,8 +3442,8 @@ ${isQualityGood ? `Анализ в формате:
                             )}
 
                             <div className="action-buttons">
-                                <button className="btn btn-primary" onClick={() => startScenario(difficulty)}>
-                                    Следующая ситуация
+                                <button className="btn btn-primary" onClick={backToDifficulty}>
+                                    Выбрать другую ситуацию
                                 </button>
                                 <button className="btn btn-secondary" onClick={restart}>
                                     Главное меню
